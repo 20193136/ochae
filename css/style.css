@@ -1,0 +1,19 @@
+.container{
+    background-color: skyblue;
+    left: 50px;
+    top : 20px;
+    position: block;
+}
+div{
+    width:50px;
+    height: 50px;
+    margin: 20px;
+    background-color: slateblue;
+    display: block;
+}
+.box{
+    background-color: dodgerblue;
+    top :30px;
+    left: 50px;
+    position : sticky;
+}

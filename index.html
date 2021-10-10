@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome </title>
 <link rel="stylesheet" href="mystyle.css">
+<link rel="stylesheet" href="./css/w3.css">
+<style>
+    section{
+        display:flex;
+    }
+    .main{
+        flex:4;
+    }
+    .right{
+        flex:1;
+    }
+</style>
 </head>
 <body>
      <header>
-         <h1>Leeyoungchae Home</h1>
+         <h1 class="w3-text-indigo w3-xxlarge">Leeyoungchae Home</h1>
      </header>
      <nav>
          <ul>
@@ -19,20 +31,40 @@
          </ul>
      </nav>
      <section>
+         <article class="main">
          <div id="profile">  <h2>PROFILE PHOTO</h2><br>
-            <img src="images/yc_img.jpg" height="500" width="400" >
+            <img class="mySlides" src="images/yc_img.jpg" height="500" width="400" >
+            <img class="mySlides" src="images/img_2.jpg" height="500" width="400">
+            <img class="mySlides" src="images/img_3.jpg" height="400" width="500">
+           
+            <script>
+                var myIndex = 0;
+                carousel();
+                
+                function carousel() {
+                  var i;
+                  var x = document.getElementsByClassName("mySlides");
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                  }
+                  myIndex++;
+                  if (myIndex > x.length) {myIndex = 1}    
+                  x[myIndex-1].style.display = "block";  
+                  setTimeout(carousel, 2000); // Change image every 2 seconds
+                }
+                </script>
+
             <h2>MUSIC</h2>
             <audio src="./media/music01.mp3" controls>
                 지원하지 않는 브라우저 입니다.
             </audio>
             <h2 style="font-size: x-large; color :cornflowerblue;">SAVE THE POLAR BEAR</h2>
             <video src="./media/movie.mp4" controls></video><br>
-            <h2>FAVORITE MOVIE</h2>
             <iframe width="875" height="492" src="https://www.youtube.com/embed/CjicesR-5S4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
             <hr>
             <h2> ACADEMIC BACKGROUND</h2>
-            <table border="1">
-                <tr>
+            <table class="w3-table-all w3-hoverable">
+                <tr class="w3-indigo">
                     <th>년도</th>
                     <th>내용</th>
                     <th>비고</th>
@@ -56,8 +88,11 @@
             </table>
 
          </div>
-         <div id="portfolio">포트폴리오</div>
+         <div id="portfolio">포트폴리오를 테이블로 표시</div>
          <div id="contact">
+        </article>
+        
+            <aside class="right">
             이메일 : dldudco0310@naver.com <br>
             주소   : 부산광역시 사상구 거주
 
@@ -71,12 +106,13 @@
          </div>
          <div id="login">
              <form action="#" method="post">
-                 아이디   : <input type="text" name="id"><br>
-                 비밀번호 : <input type="password" name="pw"><br>
-                 <input type="submit" value="로그인">
-                 <input type="reset" value="취소">
+                 아이디   : <input class="w3-input w3-border" type="text" name="id"><br>
+                 비밀번호 : <input class="w3-input w3-border" type="password" name="pw"><br>
+                 <input class="w3-btn w3-blue" type="submit" value="로그인">
+                 <input class="w3-btn w3-blue" type="reset" value="취소">
              </form>
          </div>
+        </aside>
      </section> 
      <footer>
          <div id="copyright"> <h3><strong>주소와 저작권</strong></h5></div>
